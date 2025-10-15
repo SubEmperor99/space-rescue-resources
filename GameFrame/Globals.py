@@ -3,9 +3,12 @@ class Globals:
 
     running = True
     FRAMES_PER_SECOND = 30
+    # FRAMES_PER_SECOND = 99999999
 
     SCREEN_WIDTH = 1200
     SCREEN_HEIGHT = 700
+
+    asteroid_speed = 10
 
     SCORE = 0
 

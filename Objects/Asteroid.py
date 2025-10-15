@@ -19,6 +19,7 @@ class Asteroid(RoomObject):
         
         # set travel direction
         angle = random.randint(135,225)
+        # self.set_direction(angle, Globals.asteroid_speed)
         self.set_direction(angle, 10)
         
         # register events
@@ -63,5 +64,7 @@ class Asteroid(RoomObject):
                 self.room.lives.update_image()
             else:
                 Globals.SCORE = 0  # Reset the score variable
-                self.room.update_score(0)
-                self.room.running = False
+                Globals.LIVES = 3
+                # self.room.update_score(0)
+                self.room.lives.update_image()
+                self.room.running = False 

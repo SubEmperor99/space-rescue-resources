@@ -22,6 +22,7 @@ class Score(TextObject):
         Updates the score and redraws the text
         """
         Globals.SCORE += change
+        Globals.asteroid_speed = Globals.asteroid_speed+(Globals.SCORE//100)
         self.text = str(Globals.SCORE)
         self.update_text()        
 

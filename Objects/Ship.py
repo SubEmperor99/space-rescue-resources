@@ -26,10 +26,9 @@ class Ship(RoomObject):
         """
         Respond to keypress up and down
         """
-        
-        if key[pygame.K_w]:
+        if key[pygame.K_w] or key[pygame.K_UP]:
             self.y -= 10
-        elif key[pygame.K_s]:
+        elif key[pygame.K_s] or key[pygame.K_DOWN]:
             self.y += 10
         if key[pygame.K_SPACE]:
             self.shoot_laser()
@@ -59,7 +58,8 @@ class Ship(RoomObject):
                             self.y + self.height/2 - 4)
             self.room.add_room_object(new_laser)
             self.can_shoot = False
-            self.set_timer(10,self.reset_shot)
+            # self.set_timer(10,self.reset_shot)
+            self.set_timer(0, self.reset_shot)
             self.room.shoot_laser.play()            
             
     def reset_shot(self):

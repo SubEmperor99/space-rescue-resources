@@ -1,4 +1,4 @@
-from GameFrame import RoomObject
+from GameFrame import RoomObject, Globals
 
 class Astronaut(RoomObject):
     """
@@ -36,7 +36,8 @@ class Astronaut(RoomObject):
         # ship collision
         if other_type == "Ship":
             self.room.delete_object(self)
-            self.room.score.update_score(50)   
+            # self.room.score.update_score(50)   
+            self.room.score.update_score(9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)   
             self.room.astronaut_saved.play()                    
             
     def outside_of_room(self):
